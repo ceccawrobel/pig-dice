@@ -31,7 +31,6 @@ var roll = 0
     $("#turnP1").append("<li>" + roll + "</li>");
     turnTotal = turnTotal + roll;
     $("#turnTotalP1").text(turnTotal);
-    console.log(player1.turnRolls);
     }
   });
 
@@ -43,10 +42,34 @@ var roll = 0
     $("#turnTotalP1").text(turnTotal);
     player1.turnRolls = [];
     $("#turnP1").text("");
-    console.log(player1.turnRolls);
   });
 
-// //insert this in to ROLL code
+  $("#rollP2").submit(function(event) {
+    event.preventDefault();
+    roll = Math.floor(Math.random() * 6 + 1);
+    if (roll === 1) {
+      turnTotal = 0;
+      $("#turnTotalP2").text(turnTotal);
+      player2.turnRolls = [];
+      $("#turnP2").text("");
+      alert("You rolled a 1! Turn is over.");
+    } else {
 
+    player2.turnRolls.push(roll);
+    $("#turnP2").append("<li>" + roll + "</li>");
+    turnTotal = turnTotal + roll;
+    $("#turnTotalP2").text(turnTotal);
+    }
+  });
+
+  $("#holdP2").submit(function(event) {
+    event.preventDefault();
+    player2.totalScore += turnTotal;
+    $("#scoreP2").text(player2.totalScore);
+    turnTotal = 0;
+    $("#turnTotalP2").text(turnTotal);
+    player2.turnRolls = [];
+    $("#turnP2").text("");
+  });
 
 })
