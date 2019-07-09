@@ -13,18 +13,26 @@
     <h1>Play Pig Dice</h1>
       <p>This is how the game works: roll the dice and keep rolling until you roll a 1 ... blah blah</p>
     <h2>Click the dice to roll a number:</h2>
-    
+
     <div class="row">
       <div class="col-sm-6">
-        <form id="roll1">
+        <form id="rollP1">
           <button type="submit">Roll me!</button>
         </form>
         <p>Player 1</p>
+        <p>score: <span id="scoreP1">0</span></p>
+        <p>turn total: <span id="turnTotalP1">0</span></p>
+        <ul id="turnP1"></ul>
       </div>
       <div class="col-sm-6">
-        <form id="roll2">
+        <form id="rollP2">
           <button type="submit">Roll me!</button>
         </form>
         <p>Player 2</p>
+        <p>score: <span id="scoreP2">0</span></p>
+        <p>turn total: <span id="turnTotalP2">0</span></p>
+        <ul id="turnP2"></ul>
       </div>
     </div>
+  </body>
+</html>
