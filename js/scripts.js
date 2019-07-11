@@ -25,13 +25,16 @@ var roll = 0
       player1.turnRolls = [];
       $("#turnP1").text("");
       alert("You rolled a 1! Turn is over.");
+      $(".rollButtonP1").html("<button type='submit' disabled> Roll me! </button>");
+      $(".holdButtonP1").html("<button type='submit' disabled> Hold </button>");
+      $(".rollButtonP2").html("<button type='submit'> Roll me! </button>");
+      $(".holdButtonP2").html("<button type='submit'> Hold </button>");
     } else {
-
-    player1.turnRolls.push(roll);
-    $("#turnP1").append("<li>" + roll + "</li>");
-    turnTotal = turnTotal + roll;
-    $("#turnTotalP1").text(turnTotal);
-    }
+      player1.turnRolls.push(roll);
+      $("#turnP1").append("<li>" + roll + "</li>");
+      turnTotal = turnTotal + roll;
+      $("#turnTotalP1").text(turnTotal);
+      }
   });
 
   $("#holdP1").submit(function(event) {
@@ -42,6 +45,10 @@ var roll = 0
     $("#turnTotalP1").text(turnTotal);
     player1.turnRolls = [];
     $("#turnP1").text("");
+    $(".rollButtonP1").html("<button type='submit' disabled> Roll me! </button>");
+    $(".holdButtonP1").html("<button type='submit' disabled> Hold </button>");
+    $(".rollButtonP2").html("<button type='submit'> Roll me! </button>");
+    $(".holdButtonP2").html("<button type='submit'> Hold </button>");
   });
 
   $("#rollP2").submit(function(event) {
@@ -53,13 +60,16 @@ var roll = 0
       player2.turnRolls = [];
       $("#turnP2").text("");
       alert("You rolled a 1! Turn is over.");
+      $(".rollButtonP1").html("<button type='submit'> Roll me! </button>");
+      $(".holdButtonP1").html("<button type='submit'> Hold </button>");
+      $(".rollButtonP2").html("<button type='submit' disabled> Roll me! </button>");
+      $(".holdButtonP2").html("<button type='submit' disabled> Hold </button>");
     } else {
-
-    player2.turnRolls.push(roll);
-    $("#turnP2").append("<li>" + roll + "</li>");
-    turnTotal = turnTotal + roll;
-    $("#turnTotalP2").text(turnTotal);
-    }
+      player2.turnRolls.push(roll);
+      $("#turnP2").append("<li>" + roll + "</li>");
+      turnTotal = turnTotal + roll;
+      $("#turnTotalP2").text(turnTotal);
+      }
   });
 
   $("#holdP2").submit(function(event) {
@@ -70,6 +80,10 @@ var roll = 0
     $("#turnTotalP2").text(turnTotal);
     player2.turnRolls = [];
     $("#turnP2").text("");
+    $(".rollButtonP1").html("<button type='submit'> Roll me! </button>");
+    $(".holdButtonP1").html("<button type='submit'> Hold </button>");
+    $(".rollButtonP2").html("<button type='submit' disabled> Roll me! </button>");
+    $(".holdButtonP2").html("<button type='submit' disabled> Hold </button>");
   });
 
 })
