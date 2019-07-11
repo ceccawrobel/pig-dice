@@ -34,6 +34,15 @@ var roll = 0
       $("#turnP1").append("<li>" + roll + "</li>");
       turnTotal = turnTotal + roll;
       $("#turnTotalP1").text(turnTotal);
+      if (player1.totalScore + turnTotal >= 10) {
+        player1.totalScore += turnTotal;
+        $("#scoreP1").text(player1.totalScore);
+        alert("Player 1 wins!");
+        $(".rollButtonP1").html("<button type='submit' disabled> Roll me! </button>");
+        $(".holdButtonP1").html("<button type='submit' disabled> Hold </button>");
+        $(".rollButtonP2").html("<button type='submit' disabled> Roll me! </button>");
+        $(".holdButtonP2").html("<button type='submit' disabled> Hold </button>");
+      }
       }
   });
 
@@ -69,6 +78,15 @@ var roll = 0
       $("#turnP2").append("<li>" + roll + "</li>");
       turnTotal = turnTotal + roll;
       $("#turnTotalP2").text(turnTotal);
+      if (player2.totalScore + turnTotal >= 10) {
+        player2.totalScore += turnTotal;
+        $("#scoreP2").text(player2.totalScore);
+        alert("Player 2 wins!");
+        $(".rollButtonP1").html("<button type='submit' disabled> Roll me! </button>");
+        $(".holdButtonP1").html("<button type='submit' disabled> Hold </button>");
+        $(".rollButtonP2").html("<button type='submit' disabled> Roll me! </button>");
+        $(".holdButtonP2").html("<button type='submit' disabled> Hold </button>");
+      }
       }
   });
 
